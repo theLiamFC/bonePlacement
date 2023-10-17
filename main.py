@@ -4,6 +4,7 @@ import uasyncio as asyncio
 import Servo
 import Giotto
 import ArmDrive
+import BlueTooth as bt
 
 # class to drive the car, assumes 360 degree servos
 class TankDrive:
@@ -19,6 +20,20 @@ class TankDrive:
         leftM.set_speed(leftMotor)
         rightM.set_speed(rightMotor)
 
+
 theArm = ArmDrive.ArmDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
-status = theArm.move(60,0,0)
-print(status)
+
+for i in range(20):
+    print("trying bluetooth")
+    try:   
+        L = bt.Listen('aMilliaMilliaMilli')
+        if L.connect_up(on_rx):
+            time.sleep(5)
+            L.write('heyo')
+            time.sleep(5)
+    except Exception as e:
+        print(e)
+
+finally:
+    print('closing up')
+    L.disconnect()
