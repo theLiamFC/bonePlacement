@@ -45,4 +45,17 @@ class theArm:
         
     # function to efficiently put the arm into working position 
     def goForward():
+        
+# class to drive the car, assumes 360 degree servos
+class tankDrive:
+    def __init__(self,leftPin,rightPin):
+        self.leftM = Servo.ContinuousServo(pin_number=leftPin)
+        self.rightM = Servo.ContinuousServo(pin_number=rightPin)
+        self.pace = 1
 
+    def move(self,joyY,joyX):
+        leftMotor = (y - x) * self.pace
+        rightMotor = -1 * (y + x) * self.pace
+        
+        leftM.set_speed(leftMotor)
+        rightM.set_speed(rightMotor)
