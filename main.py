@@ -38,8 +38,11 @@ class ArmDrive:
             armA.set_position(angA)
             armB.set_position(angB)
             armZ.set_position(theta)
+
+            return 100
         except Exception as e:
             print(e)
+            return 101
         
     # function to efficiently put the arm into home position 
     def goHome():
