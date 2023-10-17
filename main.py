@@ -67,4 +67,5 @@ class TankDrive:
         rightM.set_speed(rightMotor)
 
 theArm = ArmDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
-theArm.move(60,0,0)
+status = theArm.move(60,0,0)
+print(status)
