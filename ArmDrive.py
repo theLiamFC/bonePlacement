@@ -25,7 +25,7 @@ class ArmDrive:
     def move(self,x,y,theta):
         # check that location is in bounds
         if x < self.minX:
-            x = self.minX:
+            x = self.minX
         
         # solve for angles
         try:
@@ -34,19 +34,18 @@ class ArmDrive:
             # update servos
             # BUG !!! probably need to adjust angles according to servo mins and maxes
             # aka ensure that angle 0 is equal to base axis
-            armA.set_position(angA)
-            armB.set_position(angB)
-            armZ.set_position(theta)
+            self.armA.set_position(int(angA))
+            self.armB.set_position(int(angB))
+            self.armZ.set_position(int(theta))
 
             return 100
         except Exception as e:
-            print(e)
-            return 101
+            return e
         
     # function to efficiently put the arm into home position 
-    def goHome():
+    def goHome(self):
         self.move(self.homeX,self.homeY,self.homeT)
         
     # function to efficiently put the arm into working position 
-    def goForward():
+    def goForward(self):
         self.move(self.workX,self.workY,self.workT)
