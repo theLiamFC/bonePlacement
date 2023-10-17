@@ -29,14 +29,17 @@ class ArmDrive:
             x = self.minX:
         
         # solve for angles
-        [angA,angB] = self.giotto.solve(x,y)
-        
-        # update servos
-        # BUG !!! probably need to adjust angles according to servo mins and maxes
-        # aka ensure that angle 0 is equal to base axis
-        armA.set_position(angA)
-        armB.set_position(angB)
-        armZ.set_position(theta)
+        try:
+            [angA,angB] = self.giotto.solve(x,y)
+            
+            # update servos
+            # BUG !!! probably need to adjust angles according to servo mins and maxes
+            # aka ensure that angle 0 is equal to base axis
+            armA.set_position(angA)
+            armB.set_position(angB)
+            armZ.set_position(theta)
+        except Exception as e:
+            print(e)
         
     # function to efficiently put the arm into home position 
     def goHome():
