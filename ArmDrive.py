@@ -2,6 +2,9 @@
 
 # class to drive a 2dof arm with rotating base
 
+from machine import Pin, PWM, I2C
+import Servo, Giotto
+
 class ArmDrive:
     def __init__(self,pinA,pinB,pinZ,lenA=60,lenB=60,minX=10):
         self.lenA = 60
