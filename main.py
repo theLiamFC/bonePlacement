@@ -3,6 +3,7 @@ import time, struct
 import uasyncio as asyncio
 import Servo
 import Giotto
+import ArmDrive
 
 # class to drive the car, assumes 360 degree servos
 class TankDrive:
@@ -18,6 +19,6 @@ class TankDrive:
         leftM.set_speed(leftMotor)
         rightM.set_speed(rightMotor)
 
-theArm = ArmDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
+theArm = ArmDrive.ArmDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
 status = theArm.move(60,0,0)
 print(status)
