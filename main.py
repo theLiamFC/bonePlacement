@@ -17,10 +17,10 @@ class armDrive:
         self.minX = 10
         self.homeX = 50
         self.homeY = 50
-        self.homeZ = 180
+        self.homeT = 180
         self.workX = 50
         self.workY = 50
-        self.workZ = 0
+        self.workT = 0
     
     # function to precisely move the arm
     def move(self,x,y,theta):
@@ -40,11 +40,11 @@ class armDrive:
         
     # function to efficiently put the arm into home position 
     def goHome():
-        self.move(self.homeX,self.homeY,self.homeZ)
+        self.move(self.homeX,self.homeY,self.homeT)
         
     # function to efficiently put the arm into working position 
     def goForward():
-        self.move(self.workX,self.workY,self.workZ)
+        self.move(self.workX,self.workY,self.workT)
         
 # class to drive the car, assumes 360 degree servos
 class tankDrive:
