@@ -6,7 +6,7 @@ import Giotto
 
 # class to drive the arm, all measurements in mm
 # should probably make its own file eventually
-class armDrive:
+class ArmDrive:
     def __init__(self,pinA,pinB,pinZ,lenA=60,lenB=60,minX=10):
         self.lenA = 60
         self.lenB = 60
@@ -47,7 +47,7 @@ class armDrive:
         self.move(self.workX,self.workY,self.workT)
         
 # class to drive the car, assumes 360 degree servos
-class tankDrive:
+class TankDrive:
     def __init__(self,leftPin,rightPin):
         self.leftM = Servo.ContinuousServo(pin_number=leftPin)
         self.rightM = Servo.ContinuousServo(pin_number=rightPin)
@@ -60,5 +60,5 @@ class tankDrive:
         leftM.set_speed(leftMotor)
         rightM.set_speed(rightMotor)
 
-theArm = armDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
+theArm = ArmDrive(pinA=12,pinB=13,pinZ=14,lenA=60,lenB=60,minX=10)
 theArm.move(60,0,0)
