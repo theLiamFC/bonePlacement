@@ -1,4 +1,4 @@
-#Servo.py
+#servo.py
 
 from machine import PWM,Pin
 
