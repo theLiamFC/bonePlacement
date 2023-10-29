@@ -1,0 +1,27 @@
+This collection of files is run off of main.py on a pico and controlled using vacuumGUI.py on a PC.
+
+main.py:  manages the robots driving, arm, vacuum, and MQTT communications.
+          directly utililizes the following libraries:
+              ArmDrive.py
+              CarDrive.py
+              MQTT.py
+
+ArmDrive.py:  controls the arm using servo outputs
+          directly utilizes the following libraries:
+              Giotto.py
+              Servo.py
+
+ArmDrive.py:  controls the car using servo outputs
+          directly utilizes the following libraries:
+              Servo.py
+
+vacuumGUI.py:  manages the GUI on PC and gets input from PS4 controller
+          directly utilizes the following libraries:
+              PS4Controller.py
+              Paho-MQTT
+
+Giotto.py:  determines necessary angles of the arm for a given 2D position
+
+Servo.py: initiates Servos and determines necessary duty cycle for given position / speed
+
+PS4Controller.py: imports control inputs from PS4 controller over USB connection
