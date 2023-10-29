@@ -11,7 +11,7 @@ ArmDrive.py:  controls the arm using servo outputs
               Giotto.py
               Servo.py
 
-ArmDrive.py:  controls the car using servo outputs
+CarDrive.py:  controls the car using servo outputs (absent bc having issues extracting files from Pico)
           directly utilizes the following libraries:
               Servo.py
 
